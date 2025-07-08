@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Sahilow Blog" description='Home Page'>
+	<section class="">
+		<h1 class="text-center mt-28 flex flex-col text-6xl">
+			<span>thoughts in</span> 
+			<span class="text-neutral-400">digital form</span>
+		</h1>
+		<div class="max-w-2xl mx-auto mt-6">
+			<p class="text-neutral-400 text-center">
+				A collection of ideas, observations, and learnings from the intersection of technology and human experience.
+			</p>
+		</div>
+	</section>
 </Layout>

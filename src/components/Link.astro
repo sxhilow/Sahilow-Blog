@@ -1,0 +1,13 @@
+---
+interface Props {
+    href: string;
+    label: string,
+    classes?: string;
+}
+
+const {href, label, classes} = Astro.props
+---
+
+<a href={href} class={`${classes} transition duration-150`}>
+    {label}
+</a>
