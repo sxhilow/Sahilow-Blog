@@ -1,19 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Link from '../components/Link.astro';
+import {ArrowRight} from '@lucide/astro'
 
 ---
 
 <Layout title="Sahilow Blog" description='Home Page'>
 	<section class="">
-		<h1 class="text-center mt-28 flex flex-col text-6xl">
-			<span>thoughts in</span> 
-			<span class="text-neutral-400">digital form</span>
-		</h1>
+		<div class="relative flex flex-col justify-center items-center max-sm:pt-28 pt-48 text-center">
+
+			<div class="absolute inset-0 flex justify-center items-center -z-10">
+				<div class="h-72 max-sm:w-52 w-100 rounded-full bg-white opacity-10 blur-3xl translate-y-28"></div>
+			</div>
+
+			<h1 class="flex flex-col  max-sm:text-5xl text-6xl">
+				<span>thoughts in</span> 
+				<span class="text-neutral-400">digital form</span>
+			</h1>
+		</div>
 		<div class="max-w-2xl mx-auto mt-6">
-			<p class="text-neutral-400 text-center">
+			<p class="text-neutral-400 text-center p-2">
 				A collection of ideas, observations, and learnings from the intersection of technology and human experience.
 			</p>
+		</div>
+		<div class="flex justify-center my-5 items-center">
+			<Link href={'/writing'} label={'Browse writings'} classes="border border-neutral-800 py-3 px-4 rounded hover:bg-white/10">
+				<ArrowRight slot={'icon'} size={16}/>
+			</Link>
 		</div>
 	</section>
 </Layout>

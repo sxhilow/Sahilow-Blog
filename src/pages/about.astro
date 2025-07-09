@@ -1,7 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Link from "../components/Link.astro"
 ---
 
 <Layout title="About Sahilow" description='About Page'>
-	
+	<section class="max-w-3xl mx-auto max-md:p-6">
+        <div class="pt-18 md:pt-36">
+            <h1 class="text-2xl md:text-3xl mb-4">about</h1>
+            <hr class="text-neutral-800">
+        </div>
+        <div class="mt-5 text-neutral-400 space-y-5">
+            <p>
+                I'm Alex Chen, a designer and developer exploring the boundaries between technology and human experience. Currently building interfaces that matter.
+            </p>
+            <p>
+                My work focuses on creating digital experiences that feel natural and intuitive. I believe in the power of constraints to drive creativity and the importance of thoughtful design in our increasingly complex digital world.
+            </p>
+            <p>
+                When I'm not designing or coding, you'll find me reading about philosophy, experimenting with new creative tools, or exploring the outdoors with my camera.
+            </p>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-lg md:text-xl">connect</h2>
+            <div class="flex gap-3 mt-3">
+                <Link href="https://x.com/sxhilow" label="X (twitter)" classes={'text-neutral-400 text-sm hover:text-white'}/>
+                <Link href="https://www.linkedin.com/in/sahiljada/" label="LinkedIn" classes={'text-neutral-400 text-sm hover:text-white'}/>
+                <Link href="https://github.com/sxhilow" label="GitHub" classes={'text-neutral-400 text-sm hover:text-white'}/>
+            </div>
+        </div>
+    </section>
 </Layout>
