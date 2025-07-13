@@ -10,6 +10,7 @@ image:
 description: "A blog about the beauty of simplicity"
 category: "Web development"
 draft: false
+featured: false
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec justo vel tellus egestas euismod.

@@ -2,7 +2,7 @@
 layout: "../../layouts/WritingLayout.astro"
 title: "The Beauty of Simplicity"
 description: "A blog about the beauty of simplicity"
-date: "2025-07-09"
+date: "2025-07-10"
 readTime: "5"
 image:
   src: "../../src/assets/images/post-1.png"
@@ -10,6 +10,7 @@ image:
 slug: "beauty-of-simplicity"
 category: "Web development"
 draft: false
+featured: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat, metus vel cursus cursus, justo nunc luctus libero, sed lobortis magna leo nec nulla. 
