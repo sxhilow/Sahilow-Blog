@@ -1,14 +1,24 @@
 ---
+import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro"
 import PostCard from "../../components/PostCard.astro"
 import Link from "../../components/Link.astro"
 import { formatPosts } from "../../constants"
 import { ArrowRight } from "@lucide/astro"
+import Pagination from "../../components/Pagination.astro";
 
-const allPosts = await Astro.glob('./*.md')
 
+export const getStaticPaths:GetStaticPaths = async ({paginate}) => {
+    const allPosts = await Astro.glob('./*.md')
+    const formattedPosts = formatPosts(allPosts);
 
-const formattedPosts = formatPosts(allPosts);
+    return paginate(formattedPosts, {
+        pageSize: 6,
+    })
+};
+
+const { page } = Astro.props as any;
+console.log(page);
 
 
 ---
@@ -26,8 +36,16 @@ const formattedPosts = formatPosts(allPosts);
    
         <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
             {
-                formattedPosts.map((post : any) => <PostCard frontmatter={post.frontmatter} url={post.url}/>)
+                page.data.map((post : any) => <PostCard frontmatter={post.frontmatter} url={post.url}/>)
             }
         </div>
+
+        {
+            page.lastPage > 1 && (
+                <div class="mt-20">
+                    <Pagination prevURL={page.url.prev} nextURL={page.url.next}/>
+                </div>
+            )
+        }
     </section>
 </Layout>

@@ -1,0 +1,18 @@
+---
+import { ArrowLeft, ArrowRight } from "@lucide/astro";
+import Link from "./Link.astro"
+
+const {prevURL, nextURL} = Astro.props;
+---
+
+<div class="flex justify-center items-center gap-5">
+
+        <Link href={prevURL} label={"Previous"} iconPosition="left" classes={`text-sm py-3 px-3 ${prevURL ? 'hover:bg-neutral-800 rounded' : 'text-neutral-500 pointer-events-none cursor-not-allowed'}`}>
+            <ArrowLeft slot={'icon'} size={14}/>
+        </Link>
+
+        <Link href={nextURL} label={"Next"} iconPosition="right" classes={`text-sm py-3 px-3 ${nextURL ? 'hover:bg-neutral-800 rounded' : 'text-neutral-500 pointer-events-none cursor-not-allowed'}`}>
+            <ArrowRight slot={'icon'} size={14}/>
+        </Link>
+
+</div>
