@@ -11,7 +11,7 @@ const {title, date, readTime, category, image} = frontmatter;
 <header class="py-5">
     <div class="space-y-3">
         <div>
-            <Link href={`/writing/category/${slugify(category)}`} label={category} classes="text-neutral-400 uppercase text-sm" />                    
+            <Link href={`/category/${slugify(category)}`} label={category} classes="text-neutral-400 uppercase text-sm hover:text-white" />                    
         </div>
 
         <img 

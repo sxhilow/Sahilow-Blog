@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { formatPosts, slugify } from "../../constants";
+import PostCard from "../../components/PostCard.astro";
+
+export async function getStaticPaths(){
+    const allPost = await Astro.glob("../writing/*.md")
+    const formattedPosts = formatPosts(allPost);
+
+    const allCategories = [
+        ...new Set(formattedPosts.map((post:any) => post.frontmatter.category).flat())
+    ]
+
+    return allCategories.map((category:any) => {
+        const categoryPosts = formattedPosts.filter((post:any) => post.frontmatter.category === category)
+        return{
+            params: {category: slugify(category)},
+            props: {
+                name: category,
+                posts: categoryPosts
+            }
+        }
+    })
+}
+
+const {category} = Astro.params;
+const {posts, name} = Astro.props;
+const postCount = posts.length
+---
+
+<Layout title={name} description={name}>
+    <section class="max-w-6xl mx-auto px-5 pt-22">
+        <div class="py-10 space-y-3">
+            <h1 class="text-xl">{name}</h1>
+            <span class="text-neutral-400">{postCount} post in this category</span>
+        </div>
+
+        <hr class="text-neutral-800"/>
+   
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+            {
+                posts.map((post : any) => <PostCard frontmatter={post.frontmatter} url={post.url}/>)
+            }
+        </div>
+    </section>
+</Layout>
