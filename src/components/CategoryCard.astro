@@ -1,0 +1,19 @@
+---
+
+const {name, slug, count} = Astro.props;
+
+---
+
+<a href={`/category/${slug}`} class="">
+    <div class="flex justify-between items-center border border-neutral-800 p-5 bg-[#0F0F0F] rounded-xl cursor-pointer hover:bg-neutral-950 hover:border-neutral-700 transition duration-250 group">
+
+        <div>
+            <h1 class="text-2xl group-hover:text-neutral-400 transition duration-250">{name}</h1>
+        </div>
+
+        <div class="bg-neutral-800 text-sm text-white px-3 py-1 rounded-lg">
+            {count} {count === 1 ? 'post' : 'posts'}
+        </div>
+
+    </div>
+</a>

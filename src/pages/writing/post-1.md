@@ -8,7 +8,7 @@ image:
   src: "../../src/assets/images/post-1.png"
   alt: "A starry night sky"
 slug: "beauty-of-simplicity"
-category: "Web"
+category: "Exploration"
 draft: false
 featured: true
 ---
