@@ -1,6 +1,6 @@
 ---
 import Link from "./Link.astro";
-import { Calendar, Clock, User } from "@lucide/astro";
+import { ArrowRight, Calendar, Clock, User } from "@lucide/astro";
 import {slugify} from '../constants/'
 
 const { frontmatter } = Astro.props
@@ -10,8 +10,11 @@ const {title, date, readTime, category, image} = frontmatter;
 
 <header class="py-5">
     <div class="space-y-3">
-        <div>
-            <Link href={`/category/${slugify(category)}`} label={category} classes="text-neutral-400 uppercase text-sm hover:text-white" />                    
+        <div class="flex justify-between items-center">
+            <Link href={`/category/${slugify(category)}`} label={category} classes="text-neutral-400 uppercase text-sm hover:text-white" />
+            <Link href={`/category`} label={"More Categories"} classes="text-neutral-400 uppercase text-sm hover:text-white">
+                <ArrowRight slot={'icon'} size={14}/>
+            </Link>                    
         </div>
 
         <img 

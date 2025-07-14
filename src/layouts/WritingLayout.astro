@@ -1,22 +1,27 @@
 ---
 import Layout from "./Layout.astro";
 import PostHeader from '../components/PostHeader.astro'
-import { Image } from "astro:assets";
+import Link from "../components/Link.astro";
+import { ArrowRight } from "@lucide/astro";
+import { slugify } from "../constants";
 
 const {frontmatter} = Astro.props
 
-const {title, description} = frontmatter;
+const {title, description, category} = frontmatter;
 ---
 
 <Layout title={title} description={description}>
     <section class="max-w-4xl mx-auto max-md:mt-18 mt-32 p-5">
         <PostHeader frontmatter={frontmatter}/>
-        <div>
+        <div class="flex flex-col">
             <div class="content">
-                <slot/>
+                <slot />
             </div>
-            <div class="sidebar">
-
+            <hr class="text-neutral-800 mt-14 mb-5"/>
+            <div class="sidebar flex justify-center items-center">
+                <Link href={`/category/${slugify(category)}`} label={"More on this category"} classes="text-neutral-400 uppercase text-sm hover:text-white">
+                <ArrowRight slot={'icon'} size={14}/>
+            </Link>  
             </div>
         </div>
     </section>
