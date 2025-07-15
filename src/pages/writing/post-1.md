@@ -5,7 +5,7 @@ description: "A blog about the beauty of simplicity"
 date: "2025-07-10"
 readTime: "5"
 image:
-  src: "../../src/assets/images/post-1.png"
+  src: "/images/post-1.png"
   alt: "A starry night sky"
 slug: "beauty-of-simplicity"
 category: "Exploration"
