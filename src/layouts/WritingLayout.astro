@@ -10,7 +10,8 @@ const {frontmatter} = Astro.props
 const {title, description, category} = frontmatter;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} image={frontmatter.image.src} {frontmatter} robots={frontmatter.robots}>
+
     <section class="max-w-4xl mx-auto max-md:mt-18 mt-32 p-5">
         <PostHeader frontmatter={frontmatter}/>
         <div class="flex flex-col">
@@ -25,5 +26,6 @@ const {title, description, category} = frontmatter;
             </div>
         </div>
     </section>
+    
 </Layout>
 
