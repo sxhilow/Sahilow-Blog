@@ -5,7 +5,7 @@ slug: "exploring-the-unknown"
 date: "2025-07-01"
 readTime: '5'
 image:
-  src: "../../src/assets/images/post-1.png"
+  src: "/images/post-1.png"
   alt: "A starry night sky"
 description: "A blog about the beauty of simplicity"
 category: "Web development"
