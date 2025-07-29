@@ -20,10 +20,10 @@ const {title, date, readTime, category, image} = frontmatter;
         <img 
             src={image.src} 
             alt={image.alt}
-            class="bg-cover rounded shadow"
+            class="bg-cover object-cover object-center w-full h-[550px] rounded shadow"
         />
 
-        <h1 class="text-4xl">{title}</h1>
+        <h1 class="text-3xl">{title}</h1>
         <div class="flex gap-4 text-neutral-400 text-sm">
             <div class="flex items-center gap-1">
                 <Calendar size={14}/>

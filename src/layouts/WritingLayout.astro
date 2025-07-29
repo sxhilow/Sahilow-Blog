@@ -15,7 +15,7 @@ const {title, description, category} = frontmatter;
     <section class="max-w-4xl mx-auto max-md:mt-18 mt-32 p-5">
         <PostHeader frontmatter={frontmatter}/>
         <div class="flex flex-col">
-            <div class="content text-lg text-neutral-300">
+            <div class="content text-lg text-neutral-300 prose prose-invert prose-xl prose-img:rounded-lg">
                 <slot />
             </div>
             <hr class="text-neutral-800 mt-14 mb-5"/>
